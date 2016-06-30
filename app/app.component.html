@@ -1,0 +1,25 @@
+<div class="row" *ngIf="lineChartData">
+  <div class="col-md-6" style="padding: 0;">
+	RowClass
+    <base-chart class="chart"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [colors]="lineChartColours"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+               >
+		</base-chart>
+  </div>
+  <div class="col-md-6" style="margin-bottom: 10px;">
+	RowClass
+    <table class="table table-responsive table-condensed">
+      <tr>
+        <th *ngFor="let label of lineChartLabels"></th>
+      </tr>
+      <tr *ngFor="let d of lineChartData">
+        <td *ngFor="let label of lineChartLabels; let j=index"></td>
+      </tr>
+    </table>
+    <button (click)="randomize()">CLICK</button>
+  </div>
+</div>
